@@ -1,0 +1,32 @@
+S ::= Prolog Main^Punteggiatura [Epilogue];
+
+Sospensiva := ":" | ":" | "...";
+
+Punteggiatura := "!" | ".";
+
+Prolog ::= Amico "mio"[^Sospensiva] [TeLoDico[^Sospensiva] [Malviventi]|Malviventi [^Sospensiva] [TeLoDico]] ;
+
+Amico ::= "Amigo" | "Amico";
+
+AmicoU ::= "amico" | "amigo";
+
+TeLoDico ::= "te lo dico da" AmicoU^(Sospensiva | Punteggiatura) FattiCazziTua;
+
+FattiCazziTua ::= Fare "li cazzi tua";
+
+Fare ::= "ti devi fare" | "fatti";
+
+Malviventi ::= "Sono tutti" ["dei"] ("malviventi"|"delinquenti") | "Pensano tutti alli cazzi suoi";
+
+Main ::= (FattiXTuo | FattiYTua) [CheSonoSaggio];
+
+FattiXTuo ::= Fare X "tuo";
+
+FattiYTua ::= Fare Y "tua";
+
+X ::= "un aeroporto" | "un asilo" | "un parlamentare" | "un cane";
+Y ::= "una escort" | "una regione" | "una pista";
+
+CheSonoSaggio ::= "che campi cent'anni" | "che poi vedrai come la moglie e' felice" | "che poi chi cazzo ci pensa a te"^Punteggiatura Malviventi;
+
+Epilogue ::= "Io penso alli cazzi miei"^Punteggiatura ["Mi mancavano 2 mesi e prendevo il vitalizio"^Punteggiatura];
